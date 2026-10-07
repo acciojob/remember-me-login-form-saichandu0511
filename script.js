@@ -1,17 +1,18 @@
 //your JS code here. If required.
-const form = document.getElementById("loginform");
+const form = document.getElementById("loginForm");
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 const checkbox = document.getElementById("checkbox");
 const existing = document.getElementById("existing");
 
-if (localStorage.getItem("username")){
-	existing.style="block";
+if (localStorage.getItem("username")) {
+    existing.style.display = "block";
 }
 
-form.addEventListener("submit",function(event){
-	event.preventDefault();
- alert("Logged in as " + username.value);
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    alert("Logged in as " + username.value);
 
     if (checkbox.checked) {
         localStorage.setItem("username", username.value);
