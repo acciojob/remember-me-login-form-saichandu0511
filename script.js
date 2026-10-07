@@ -5,10 +5,17 @@ const password = document.getElementById("password");
 const checkbox = document.getElementById("checkbox");
 const existing = document.getElementById("existing");
 
-if (localStorage.getItem("username")) {
+// Check saved credentials when page loads
+if (
+    localStorage.getItem("username") &&
+    localStorage.getItem("password")
+) {
     existing.style.display = "block";
+} else {
+    existing.style.display = "none";
 }
 
+// Form submission
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -27,6 +34,7 @@ form.addEventListener("submit", function (event) {
     }
 });
 
+// Existing user login
 existing.addEventListener("click", function () {
     const savedUsername = localStorage.getItem("username");
 
