@@ -5,7 +5,7 @@ const password = document.getElementById("password");
 const checkbox = document.getElementById("checkbox");
 const existing = document.getElementById("existing");
 
-if (localStorage.getItem("username")){
+if localStorage.getItem("username"){
 	existing.style="block";
 }
 
